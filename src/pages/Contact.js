@@ -2,48 +2,53 @@ function Contact() {
 
   return (
 
-    <section id="contact">
+    <section id="contact" className="contact-section">
 
-      <div className="section-label">
+      <div className="section-tag">
         連絡 ・ CONTACT
       </div>
 
-      <h2 className="section-title">
-        Get In Touch
-      </h2>
+      <h2>Get In Touch</h2>
 
-      <div className="section-line"></div>
+      <div className="contact-box">
 
-      <div className="contact-kanji">
-        桜
-      </div>
-
-      <div className="contact-email">
-        saibalajigandham877@gmail.com
-      </div>
-
-      <div className="contact-sub">
-        +91 9059335585 · Vijayawada, India
-      </div>
-
-      <div className="contact-links">
-
-        <a href="#">
-          ✦ LINKEDIN
+        <a
+          href="mailto:saibalajigandham877@gmail.com"
+          className="contact-mail"
+        >
+          saibalajigandham877@gmail.com
         </a>
 
-        <a href="#">
-          ✦ GITHUB
-        </a>
+        <p>
+          +91 9059335585 · Vijayawada, India
+        </p>
 
-        <a href="#">
-          ✦ EMAIL
-        </a>
+        <div className="contact-links">
 
-      </div>
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LINKEDIN
+          </a>
 
-      <div className="footer">
-        桜 · Gandham Sai Balaji · 2025 · 花よりも美しい未来へ
+          <a
+            href="https://github.com/Balu1805"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GITHUB
+          </a>
+
+          <a
+            href="mailto:saibalajigandham877@gmail.com"
+          >
+            EMAIL
+          </a>
+
+        </div>
+
       </div>
 
     </section>
