@@ -1,47 +1,128 @@
+import { motion } from "framer-motion";
+
 function About() {
 
   return (
 
-    <section id="about">
+    <motion.section
+
+      id="about"
+
+      initial={{
+        opacity:0,
+        y:80
+      }}
+
+      whileInView={{
+        opacity:1,
+        y:0
+      }}
+
+      transition={{
+        duration:1.2,
+        ease:"easeOut"
+      }}
+
+      viewport={{
+        once:true
+      }}
+    >
+
+      {/* SECTION LABEL */}
 
       <div className="section-label">
         私について ・ ABOUT
       </div>
 
+      {/* TITLE */}
+
       <h2 className="section-title">
-        Beyond Code
+        Beyond The Screen
       </h2>
 
       <div className="section-line"></div>
 
+      {/* CONTENT */}
+
       <div className="about-grid">
 
-        <div className="about-text">
+        {/* LEFT SIDE */}
+
+        <motion.div
+
+          className="about-text"
+
+          initial={{
+            opacity:0,
+            x:-60
+          }}
+
+          whileInView={{
+            opacity:1,
+            x:0
+          }}
+
+          transition={{
+            duration:1.1
+          }}
+
+          viewport={{
+            once:true
+          }}
+        >
 
           <p>
-            AI/ML Developer and aspiring Software Engineer from Vijayawada,
-            passionate about building intelligent systems, immersive user
-            experiences, and scalable full stack applications using Artificial
-            Intelligence, Cloud Technologies, and modern frontend engineering.
+            I am an aspiring Software Engineer and AI/ML Developer
+            from Vijayawada with a strong interest in creating
+            intelligent systems, immersive interfaces,
+            and meaningful digital experiences.
           </p>
 
           <p>
-            I enjoy combining elegant visual aesthetics with practical software
-            solutions through projects involving Flood Prediction, Human
-            Activity Recognition, Computer Vision, and Machine Learning systems.
+            My development journey focuses on blending
+            Artificial Intelligence,
+            Full Stack Engineering,
+            Cloud Technologies,
+            and elegant UI/UX design into systems
+            that feel both functional and cinematic.
           </p>
 
           <p>
-            Beyond technology, I value discipline, strategic thinking, and
-            consistency. Gym training strengthens my mindset, chess sharpens my
-            analytical decision-making, and badminton keeps me competitive and
-            focused — qualities that also influence the way I approach software
-            engineering and teamwork.
+            Beyond coding,
+            discipline from gym training,
+            strategic thinking from chess,
+            and competitive focus from badminton
+            shape the mindset I bring into engineering and leadership.
           </p>
 
-        </div>
+        </motion.div>
 
-        <div className="stats-grid">
+        {/* RIGHT SIDE */}
+
+        <motion.div
+
+          className="stats-grid"
+
+          initial={{
+            opacity:0,
+            x:60
+          }}
+
+          whileInView={{
+            opacity:1,
+            x:0
+          }}
+
+          transition={{
+            duration:1.2
+          }}
+
+          viewport={{
+            once:true
+          }}
+        >
+
+          {/* CARD 1 */}
 
           <div className="stat-card">
 
@@ -50,10 +131,12 @@ function About() {
             </div>
 
             <div className="stat-label">
-              Projects Engineered
+              PROJECTS BUILT
             </div>
 
           </div>
+
+          {/* CARD 2 */}
 
           <div className="stat-card">
 
@@ -62,10 +145,12 @@ function About() {
             </div>
 
             <div className="stat-label">
-              Team Lead Contributions
+              TEAM LEAD ROLES
             </div>
 
           </div>
+
+          {/* CARD 3 */}
 
           <div className="stat-card">
 
@@ -74,10 +159,12 @@ function About() {
             </div>
 
             <div className="stat-label">
-              Certified Cloud Practitioner
+              CLOUD CERTIFIED
             </div>
 
           </div>
+
+          {/* CARD 4 */}
 
           <div className="stat-card">
 
@@ -86,16 +173,16 @@ function About() {
             </div>
 
             <div className="stat-label">
-              Independent Deep Learning Project
+              SOLO AI PROJECT
             </div>
 
           </div>
 
-        </div>
+        </motion.div>
 
       </div>
 
-    </section>
+    </motion.section>
   );
 }
 

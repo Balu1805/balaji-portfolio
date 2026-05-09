@@ -1,21 +1,48 @@
 import profile from "../assets/images/profile.jpg";
 import fuji from "../assets/images/fuzi2.webp";
 
+import { motion } from "framer-motion";
+
 function Hero() {
+
   return (
+
     <section id="hero">
 
+      {/* FUJI BACKGROUND */}
+
       <img
-  src={fuji}
-  alt="Mount Fuji"
-  className="fuji-bg"
-/>
+        src={fuji}
+        alt="Mount Fuji"
+        className="fuji-bg"
+      />
+
+      {/* JAPANESE BACKGROUND TEXT */}
 
       <div className="hero-bg-text">
         桜
       </div>
 
-      <div className="hero-left reveal">
+      {/* LEFT SIDE */}
+
+      <motion.div
+        className="hero-left reveal"
+
+        initial={{
+          opacity:0,
+          x:-80
+        }}
+
+        animate={{
+          opacity:1,
+          x:0
+        }}
+
+        transition={{
+          duration:1.3,
+          ease:"easeOut"
+        }}
+      >
 
         <div className="hero-tag">
           Portfolio · 2025
@@ -32,26 +59,56 @@ function Hero() {
         </div>
 
         <p className="hero-bio">
-          Aspiring Software Engineer and AI/ML Developer at KL University.
-          Building production-grade systems that blend machine learning,
-          full-stack development, and cloud architecture.
+          Aspiring Software Engineer and AI/ML Developer
+          focused on building intelligent systems,
+          immersive digital experiences, and scalable
+          full stack applications blending Artificial
+          Intelligence, Cloud Technologies, and elegant UI engineering.
         </p>
+
+        {/* BUTTONS */}
 
         <div className="hero-btns">
 
-          <a href="#projects" className="btn-primary">
+          <a
+            href="#projects"
+            className="btn-primary"
+          >
             View Projects
           </a>
 
-          <a href="#contact" className="btn-outline">
-            Get in Touch
+          <a
+            href="/resume.pdf"
+            download
+            className="btn-outline"
+          >
+            Download Resume
           </a>
 
         </div>
 
-      </div>
+      </motion.div>
 
-      <div className="hero-right reveal">
+      {/* RIGHT SIDE */}
+
+      <motion.div
+        className="hero-right reveal"
+
+        initial={{
+          opacity:0,
+          x:80
+        }}
+
+        animate={{
+          opacity:1,
+          x:0
+        }}
+
+        transition={{
+          duration:1.4,
+          ease:"easeOut"
+        }}
+      >
 
         <div className="profile-frame">
 
@@ -67,7 +124,7 @@ function Hero() {
 
         </div>
 
-      </div>
+      </motion.div>
 
     </section>
   );

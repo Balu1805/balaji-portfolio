@@ -1,16 +1,93 @@
+import { motion } from "framer-motion";
+
 function Contact() {
 
   return (
 
-    <section id="contact" className="contact-section">
+    <motion.section
+
+      id="contact"
+
+      className="contact-section"
+
+      initial={{
+        opacity:0,
+        y:80
+      }}
+
+      whileInView={{
+        opacity:1,
+        y:0
+      }}
+
+      transition={{
+        duration:1.2
+      }}
+
+      viewport={{
+        once:true
+      }}
+    >
+
+      {/* JAPANESE BACKGROUND */}
+
+      <div className="contact-bg-kanji">
+        桜
+      </div>
+
+      {/* HEADER */}
 
       <div className="section-tag">
         連絡 ・ CONTACT
       </div>
 
-      <h2>Get In Touch</h2>
+      <h2 className="contact-title">
+        Let’s Build
+        <br />
+        Something Beautiful
+      </h2>
 
-      <div className="contact-box">
+      <div className="contact-line"></div>
+
+      {/* DESCRIPTION */}
+
+      <p className="contact-description">
+
+        Open to opportunities, collaborations,
+        and innovative software engineering projects
+        involving Artificial Intelligence,
+        Full Stack Development,
+        Cloud Technologies,
+        and immersive digital experiences.
+
+      </p>
+
+      {/* CONTACT BOX */}
+
+      <motion.div
+
+        className="contact-box"
+
+        initial={{
+          opacity:0,
+          scale:0.95
+        }}
+
+        whileInView={{
+          opacity:1,
+          scale:1
+        }}
+
+        transition={{
+          duration:1
+        }}
+
+        viewport={{
+          once:true
+        }}
+      >
+
+        {/* EMAIL */}
 
         <a
           href="mailto:saibalajigandham877@gmail.com"
@@ -19,9 +96,13 @@ function Contact() {
           saibalajigandham877@gmail.com
         </a>
 
-        <p>
+        {/* INFO */}
+
+        <p className="contact-info">
           +91 9059335585 · Vijayawada, India
         </p>
+
+        {/* LINKS */}
 
         <div className="contact-links">
 
@@ -42,16 +123,23 @@ function Contact() {
           </a>
 
           <a
-            href="mailto:saibalajigandham877@gmail.com"
+            href="/resume.pdf"
+            download
           >
-            EMAIL
+            RESUME
           </a>
 
         </div>
 
+      </motion.div>
+
+      {/* FOOTER */}
+
+      <div className="contact-footer">
+        桜 ・ Gandham Sai Balaji ・ 2025 ・ 花よりも美しい未来へ
       </div>
 
-    </section>
+    </motion.section>
 
   );
 }

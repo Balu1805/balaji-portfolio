@@ -1,44 +1,74 @@
+import { motion } from "framer-motion";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+
 import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Certifications from "./pages/Certifications";
 import Contact from "./pages/Contact";
+
 import SpiritBot from "./components/SpiritBot";
 
 import SplashScreen from "./components/SplashScreen";
 import Petals from "./components/Petals";
 
-
+import "./styles/main.css";
 
 function App() {
 
   return (
+
     <>
+
+      {/* SPLASH SCREEN */}
 
       <SplashScreen />
 
+      {/* PETALS BACKGROUND */}
+
       <Petals />
 
-      <Navbar />
+      {/* MAIN WEBSITE */}
 
-      <Hero />
+      <motion.div
 
-      <About />
+        initial={{
+          opacity:0
+        }}
 
-      <Skills />
+        animate={{
+          opacity:1
+        }}
 
-      <Projects />
+        transition={{
+          duration:1.2
+        }}
+      >
 
-      <Certifications />
+        <Navbar />
 
-      <Contact />
+        <Hero />
+
+        <About />
+
+        <Skills />
+
+        <Projects />
+
+        <Certifications />
+
+        <Contact />
+
+      </motion.div>
+
+      {/* SPIRIT COMPANION */}
 
       <SpiritBot />
 
-
     </>
+
   );
 }
 
