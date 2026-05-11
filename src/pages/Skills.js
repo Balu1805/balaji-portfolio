@@ -11,6 +11,9 @@ function Skills() {
         <div className="skill-card">React</div>
         <div className="skill-card">AWS</div>
         <div className="skill-card">Machine Learning</div>
+        <div className="skill-card">Neural Networks</div>
+        <div className="skill-card">Spring boot</div>
+        <div className="skill-card">Sql</div>
 
       </div>
 

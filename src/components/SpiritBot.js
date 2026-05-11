@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import spiritResponses from "../data/spiritResponses";
 
@@ -10,12 +10,59 @@ function SpiritBot() {
 
   const [message, setMessage] = useState("");
 
+  const [typing, setTyping] = useState(false);
+
+  const [notification, setNotification] = useState("");
+
+  const chatEndRef = useRef(null);
+
+  const suggestions = [
+
+    "Projects",
+
+    "Skills",
+
+    "AWS",
+
+    "Contact",
+
+    "About You"
+  ];
+
   const [chat, setChat] = useState([
     {
-      type: "bot",
-      text: "🌸 Welcome wanderer..."
+      type:"bot",
+      text:"🌸 Welcome wanderer..."
+    },
+    {
+      type:"bot",
+      text:"✨ Ask me about Balu's projects, skills or certifications."
     }
   ]);
+
+  useEffect(() => {
+
+  const timer = setTimeout(() => {
+
+    setNotification(
+      "🌸 Welcome to Balu's Portfolio"
+    );
+
+  }, 2500);
+
+  return () => clearTimeout(timer);
+
+}, []);
+
+  /* AUTO SCROLL */
+
+  useEffect(() => {
+
+    chatEndRef.current?.scrollIntoView({
+      behavior:"smooth"
+    });
+
+  }, [chat, typing]);
 
   /* USER ACTIVITY */
 
@@ -30,13 +77,17 @@ function SpiritBot() {
       clearTimeout(timer);
 
       timer = setTimeout(() => {
+
         setIdle(true);
+
       }, 4000);
 
     };
 
     window.addEventListener("mousemove", resetTimer);
+
     window.addEventListener("scroll", resetTimer);
+
     window.addEventListener("click", resetTimer);
 
     resetTimer();
@@ -44,72 +95,34 @@ function SpiritBot() {
     return () => {
 
       window.removeEventListener("mousemove", resetTimer);
+
       window.removeEventListener("scroll", resetTimer);
+
       window.removeEventListener("click", resetTimer);
 
     };
 
   }, []);
 
-  /* AUTO IDLE MESSAGES */
+  /* IDLE NOTIFICATIONS */
 
   useEffect(() => {
 
     if(idle){
 
-const idleMessages = [
+      const idleMessages = [
 
-  "🌸 Still exploring?",
+        "🌸 Still exploring?",
 
-  "🌸 Discipline creates elegance.",
+        "🚀 Ask about AI projects.",
 
-  "🌸 Curiosity moves the petals.",
+        "☁️ Curious about AWS certification?",
 
-  "🌸 Have a beautiful day ahead.",
+        "💡 Explore Balu's technical skills.",
 
-  "🌸 You look focused today.",
+        "🌸 The spirit awaits your questions."
+      ];
 
-  "🌸 Quiet minds build powerful systems.",
-
-  "🌸 Even the petals admire consistency.",
-
-  "🌸 Keep moving forward gently.",
-
-  "🌸 The spirit believes in your journey.",
-
-  "🌸 A calm mind creates great ideas.",
-
-  "🌸 Chess sharpens strategy. Life tests it.",
-
-  "🌸 Small steps become beautiful destinations.",
-
-  "🌸 Don't forget to rest your mind too.",
-
-  "🌸 Your presence changes the atmosphere.",
-
-  "🌸 Some journeys deserve patience.",
-
-  "🌸 The petals dance for determined souls.",
-
-  "🌸 Keep building. Keep evolving.",
-
-  "🌸 Soft hearts can still build strong futures.",
-
-  "🌸 There is beauty in discipline.",
-
-  "🌸 Have a peaceful evening wanderer.",
-
-  "🌸 The spirit enjoys your company.",
-
-  "🌸 Every engineer carries silent dreams.",
-
-  "🌸 Today feels calm... doesn't it?",
-
-  "🌸 Balance creates strength.",
-
-  "🌸 Stay consistent. Beautiful things take time."
-
-];
       const random =
       idleMessages[
         Math.floor(
@@ -117,28 +130,21 @@ const idleMessages = [
         )
       ];
 
-      setChat((prev) => [
-        ...prev,
-        {
-          type:"bot",
-          text:random
-        }
-      ]);
+      setNotification(random);
+
+      setTimeout(() => {
+
+        setNotification("");
+
+      }, 3500);
 
     }
 
   }, [idle]);
 
-  /* SEND MESSAGE */
+  /* BOT RESPONSE */
 
-  const sendMessage = () => {
-
-    if(!message.trim()) return;
-
-    const userMsg = {
-      type:"user",
-      text:message
-    };
+  const getBotReply = (userMessage) => {
 
     let botReply =
     "🌸 The spirit is thinking...";
@@ -148,32 +154,88 @@ const idleMessages = [
       item.keywords.forEach((word) => {
 
         if(
-          message.toLowerCase().includes(word)
+          userMessage
+          .toLowerCase()
+          .includes(word)
         ){
+
           botReply = item.answer;
+
         }
 
       });
 
     });
 
+    return botReply;
+  };
+
+  /* SEND MESSAGE */
+
+  const sendMessage = (customMessage = null) => {
+
+    const finalMessage =
+    customMessage || message;
+
+    if(!finalMessage.trim()) return;
+
+    const userMsg = {
+
+      type:"user",
+
+      text:finalMessage
+    };
+
     setChat((prev) => [
+
       ...prev,
-      userMsg,
-      {
-        type:"bot",
-        text:botReply
-      }
+
+      userMsg
+
     ]);
 
     setMessage("");
+
+    setTyping(true);
+
+    const botReply =
+    getBotReply(finalMessage);
+
+    setTimeout(() => {
+
+      setTyping(false);
+
+      setChat((prev) => [
+
+        ...prev,
+
+        {
+          type:"bot",
+          text:botReply
+        }
+
+      ]);
+
+    }, 1400);
   };
 
   return (
 
     <>
 
-      {/* SPIRIT */}
+      {/* NOTIFICATION */}
+
+      {notification && !open && (
+
+        <div className="bot-notification">
+
+          {notification}
+
+        </div>
+
+      )}
+
+      {/* BOT */}
 
       <div
         className={`spirit-bot ${idle ? "idle" : "active"}`}
@@ -194,7 +256,7 @@ const idleMessages = [
 
       </div>
 
-      {/* CHAT WINDOW */}
+      {/* CHAT */}
 
       {open && (
 
@@ -221,30 +283,74 @@ const idleMessages = [
 
             ))}
 
+            {/* TYPING */}
+
+            {typing && (
+
+              <div className="msg bot typing">
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+              </div>
+
+            )}
+
+            {/* SUGGESTIONS */}
+
+            <div className="suggestions">
+
+              {suggestions.map((item, index) => (
+
+                <button
+                  key={index}
+                  onClick={() => sendMessage(item)}
+                >
+
+                  {item}
+
+                </button>
+
+              ))}
+
+            </div>
+
+            <div ref={chatEndRef}></div>
+
           </div>
+
+          {/* INPUT */}
 
           <div className="spirit-chat-input">
 
-          <input
-                type="text"
-                placeholder="Speak with the spirit..."
-                value={message}
-                onChange={(e) =>
-                    setMessage(e.target.value)
+            <input
+              type="text"
+              placeholder="Speak with the spirit..."
+              value={message}
+              onChange={(e) =>
+                setMessage(e.target.value)
+              }
+
+              onKeyDown={(e) => {
+
+                if(e.key === "Enter"){
+
+                  sendMessage();
+
                 }
 
-                onKeyDown={(e) => {
-
-                    if(e.key === "Enter"){
-
-                    sendMessage();
-
-                    }
-
-                }}
+              }}
             />
-            <button onClick={sendMessage}>
+
+            <button
+              onClick={() => sendMessage()}
+            >
+
               ✦
+
             </button>
 
           </div>

@@ -384,6 +384,7 @@ body{
   z-index:0;
 }
 
+
 .fuji-bg{
 
   position:absolute;
@@ -707,7 +708,6 @@ section{
 
   color:var(--pink);
 }
-
 /* =========================
    CERTIFICATIONS
 ========================= */
@@ -717,45 +717,84 @@ section{
   display:grid;
 
   grid-template-columns:
-  repeat(3,1fr);
+  repeat(auto-fit,minmax(320px,1fr));
 
-  gap:30px;
+  gap:32px;
+
+  margin-top:70px;
 }
 
 .cert-card{
 
-  background:var(--glass);
+  background:
+  rgba(255,255,255,0.5);
 
-  border:
-  1px solid var(--line);
+  border:1px solid var(--line);
+
+  border-radius:18px;
 
   overflow:hidden;
 
   transition:0.4s ease;
 
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(14px);
+
+  box-shadow:
+  0 8px 24px rgba(210,150,175,0.08);
+
+  display:flex;
+
+  flex-direction:column;
+
+  height:100%;
 }
 
 .cert-card:hover{
 
-  transform:
-  translateY(-6px);
+  transform:translateY(-8px);
 
   box-shadow:
-  0 14px 35px var(--shadow);
+  0 18px 40px rgba(210,150,175,0.18);
+}
+
+.cert-img-wrap{
+
+  width:100%;
+
+  height:220px;
+
+  overflow:hidden;
+
+  background:#f8f1f5;
 }
 
 .cert-img-wrap img{
 
   width:100%;
 
-  height:250px;
+  height:100%;
 
   object-fit:cover;
+
+  transition:0.4s ease;
+}
+
+.cert-card:hover .cert-img-wrap img{
+
+  transform:scale(1.04);
 }
 
 .cert-body{
-  padding:30px;
+
+  padding:28px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:16px;
+
+  flex:1;
 }
 
 .cert-title{
@@ -763,9 +802,126 @@ section{
   font-family:
   'Cormorant Garamond',serif;
 
-  font-size:38px;
+  font-size:34px;
 
-  margin-bottom:18px;
+  line-height:1.1;
+
+  color:#24161d;
+}
+
+.cert-provider{
+
+  font-size:14px;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  color:var(--pink);
+
+  font-weight:500;
+}
+
+.cert-description{
+
+  font-size:15px;
+
+  line-height:1.8;
+
+  color:var(--text);
+
+  flex:1;
+}
+
+.cert-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  width:fit-content;
+
+  padding:12px 22px;
+
+  border:1px solid var(--line);
+
+  background:
+  rgba(255,255,255,0.6);
+
+  text-decoration:none;
+
+  color:#4d3b44;
+
+  font-size:12px;
+
+  letter-spacing:2px;
+
+  border-radius:8px;
+
+  transition:0.35s ease;
+}
+
+.cert-btn:hover{
+
+  background:var(--pink);
+
+  color:white;
+
+  transform:translateY(-2px);
+}
+
+/* =========================
+   CERTIFICATIONS MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .certs-grid{
+
+    grid-template-columns:1fr;
+
+    gap:24px;
+  }
+
+  .cert-img-wrap{
+
+    height:200px;
+  }
+
+  .cert-body{
+
+    padding:22px;
+  }
+
+  .cert-title{
+
+    font-size:28px;
+  }
+
+  .cert-description{
+
+    font-size:14px;
+  }
+
+  .cert-btn{
+
+    width:100%;
+  }
+}
+
+@media(max-width:480px){
+
+  .cert-title{
+
+    font-size:24px;
+  }
+
+  .cert-img-wrap{
+
+    height:180px;
+  }
 }
 
 /* =========================
@@ -790,7 +946,7 @@ section{
 
   text-align:center;
 
-  padding:140px 30px 180px;
+  padding:120px 20px;
 }
 
 .contact-bg-kanji{
@@ -801,19 +957,20 @@ section{
 
   left:50%;
 
-  transform:
-  translate(-50%,-50%);
+  transform:translate(-50%,-50%);
 
-  font-size:340px;
+  font-size:260px;
 
   color:#f0dde5;
 
-  opacity:0.35;
+  opacity:0.22;
 
   z-index:0;
 
   font-family:
   'Cormorant Garamond',serif;
+
+  pointer-events:none;
 }
 
 .contact-title{
@@ -821,11 +978,11 @@ section{
   font-family:
   'Cormorant Garamond',serif;
 
-  font-size:110px;
+  font-size:clamp(52px,8vw,110px);
 
-  line-height:0.95;
+  line-height:1;
 
-  margin-bottom:30px;
+  margin-bottom:25px;
 
   color:#1f1118;
 
@@ -840,8 +997,7 @@ section{
 
   background:var(--pink);
 
-  margin:
-  0 auto 45px;
+  margin:0 auto 35px;
 }
 
 .contact-description{
@@ -850,27 +1006,41 @@ section{
 
   font-size:18px;
 
-  line-height:2.1;
+  line-height:1.9;
 
   color:#5f4d56;
 
-  margin-bottom:65px;
+  margin-bottom:50px;
+
+  z-index:2;
 }
 
 .contact-box{
 
   width:100%;
 
-  max-width:860px;
+  max-width:900px;
 
-  padding:65px;
+  padding:60px 45px;
 
   background:var(--glass);
 
-  border:
-  1px solid var(--line);
+  border:1px solid var(--line);
 
   backdrop-filter:blur(16px);
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  gap:22px;
+
+  z-index:2;
+
+  box-shadow:
+  0 14px 35px var(--shadow);
 }
 
 .contact-mail{
@@ -880,13 +1050,34 @@ section{
   font-family:
   'Cormorant Garamond',serif;
 
-  font-size:58px;
+  font-size:clamp(34px,4vw,72px);
 
   color:#ca87a3;
 
   text-decoration:none;
 
-  margin-bottom:22px;
+  text-align:center;
+
+  line-height:1.2;
+
+  word-break:break-word;
+}
+
+.contact-info{
+
+  font-size:18px;
+
+  color:#5f4d56;
+
+  display:flex;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+
+  justify-content:center;
+
+  align-items:center;
 }
 
 .contact-links{
@@ -895,9 +1086,13 @@ section{
 
   justify-content:center;
 
-  gap:22px;
+  align-items:center;
+
+  gap:18px;
 
   flex-wrap:wrap;
+
+  margin-top:10px;
 }
 
 .contact-links a{
@@ -906,19 +1101,24 @@ section{
 
   color:#5a4850;
 
-  letter-spacing:3px;
+  letter-spacing:2px;
 
-  font-size:13px;
+  font-size:12px;
 
-  border:
-  1px solid var(--line);
+  border:1px solid var(--line);
 
-  padding:14px 28px;
+  padding:14px 24px;
 
-  transition:0.4s ease;
+  transition:0.35s ease;
 
   background:
   rgba(255,255,255,0.55);
+
+  min-width:150px;
+
+  text-align:center;
+
+  border-radius:8px;
 }
 
 .contact-links a:hover{
@@ -926,7 +1126,110 @@ section{
   background:var(--pink);
 
   color:white;
+
+  transform:translateY(-3px);
 }
+
+.contact-footer{
+
+  margin-top:35px;
+
+  font-size:16px;
+
+  color:#5f4d56;
+
+  letter-spacing:1px;
+
+  z-index:2;
+
+  text-align:center;
+
+  line-height:1.8;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .contact-section{
+
+    padding:90px 20px;
+  }
+
+  .contact-bg-kanji{
+
+    font-size:150px;
+  }
+
+  .contact-description{
+
+    font-size:16px;
+
+    line-height:1.8;
+  }
+
+  .contact-box{
+
+    padding:40px 22px;
+  }
+
+  .contact-mail{
+
+    font-size:32px;
+  }
+
+  .contact-info{
+
+    font-size:15px;
+
+    flex-direction:column;
+
+    gap:6px;
+  }
+
+  .contact-links{
+
+    flex-direction:column;
+
+    width:100%;
+  }
+
+  .contact-links a{
+
+    width:100%;
+  }
+
+  .contact-footer{
+
+    font-size:14px;
+  }
+}
+
+@media(max-width:480px){
+
+  .contact-title{
+
+    font-size:42px;
+  }
+
+  .contact-mail{
+
+    font-size:26px;
+  }
+
+  .contact-description{
+
+    font-size:15px;
+  }
+
+  .contact-box{
+
+    padding:32px 18px;
+  }
+}
+
 
 /* =========================
    SPIRIT BOT
@@ -977,6 +1280,15 @@ section{
 
   animation:
   spiritFloat 4s ease-in-out infinite;
+}
+
+.spirit-bot:hover{
+
+  transform:
+  translateY(-4px) scale(1.03);
+
+  box-shadow:
+  0 18px 40px rgba(210,150,175,0.35);
 }
 
 .spirit-face{
@@ -1041,6 +1353,66 @@ section{
 }
 
 /* =========================
+   BOT NOTIFICATION
+========================= */
+
+.bot-notification{
+
+  position:fixed;
+
+  bottom:130px;
+
+  right:30px;
+
+  max-width:260px;
+
+  padding:14px 18px;
+
+  border-radius:18px;
+
+  background:
+  rgba(255,255,255,0.88);
+
+  backdrop-filter:blur(18px);
+
+  border:
+  1px solid rgba(225,205,215,0.42);
+
+  box-shadow:
+  0 10px 25px rgba(0,0,0,0.08);
+
+  color:#4f3d46;
+
+  font-size:14px;
+
+  line-height:1.7;
+
+  z-index:99998;
+
+  animation:
+  notificationFade 0.4s ease;
+}
+
+@keyframes notificationFade{
+
+  from{
+
+    opacity:0;
+
+    transform:
+    translateY(10px);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+    translateY(0px);
+  }
+}
+
+/* =========================
    CHAT WINDOW
 ========================= */
 
@@ -1052,12 +1424,12 @@ section{
 
   right:30px;
 
-  width:360px;
+  width:370px;
 
-  height:520px;
+  height:540px;
 
   background:
-  rgba(255,255,255,0.72);
+  rgba(255,255,255,0.78);
 
   backdrop-filter:blur(18px);
 
@@ -1072,8 +1444,10 @@ section{
 
   z-index:99998;
 
+  border-radius:22px;
+
   box-shadow:
-  0 14px 35px var(--shadow);
+  0 16px 40px rgba(0,0,0,0.12);
 }
 
 .spirit-chat-header{
@@ -1087,6 +1461,12 @@ section{
   font-size:14px;
 
   letter-spacing:3px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
 }
 
 .spirit-chat-body{
@@ -1104,6 +1484,18 @@ section{
   gap:14px;
 }
 
+.spirit-chat-body::-webkit-scrollbar{
+
+  width:6px;
+}
+
+.spirit-chat-body::-webkit-scrollbar-thumb{
+
+  background:#d9b1c1;
+
+  border-radius:999px;
+}
+
 .msg{
 
   max-width:82%;
@@ -1113,6 +1505,28 @@ section{
   font-size:14px;
 
   line-height:1.8;
+
+  animation:
+  msgFade 0.3s ease;
+}
+
+@keyframes msgFade{
+
+  from{
+
+    opacity:0;
+
+    transform:
+    translateY(6px);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+    translateY(0px);
+  }
 }
 
 .msg.bot{
@@ -1140,6 +1554,113 @@ section{
   border-radius:18px 18px 4px 18px;
 }
 
+/* =========================
+   TYPING ANIMATION
+========================= */
+
+.typing{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:6px;
+
+  min-width:70px;
+}
+
+.typing span{
+
+  width:8px;
+
+  height:8px;
+
+  border-radius:50%;
+
+  background:#c987a2;
+
+  animation:
+  typingBounce 1.2s infinite ease-in-out;
+}
+
+.typing span:nth-child(2){
+
+  animation-delay:0.2s;
+}
+
+.typing span:nth-child(3){
+
+  animation-delay:0.4s;
+}
+
+@keyframes typingBounce{
+
+  0%,80%,100%{
+
+    transform:scale(0.7);
+
+    opacity:0.5;
+  }
+
+  40%{
+
+    transform:scale(1);
+
+    opacity:1;
+  }
+}
+
+/* =========================
+   SUGGESTIONS
+========================= */
+
+.suggestions{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-top:6px;
+}
+
+.suggestions button{
+
+  border:none;
+
+  padding:10px 14px;
+
+  border-radius:999px;
+
+  background:
+  rgba(255,255,255,0.7);
+
+  border:
+  1px solid rgba(225,205,215,0.45);
+
+  cursor:pointer;
+
+  font-size:12px;
+
+  transition:0.3s ease;
+
+  color:#4f3d46;
+}
+
+.suggestions button:hover{
+
+  background:var(--pink);
+
+  color:white;
+
+  transform:translateY(-2px);
+}
+
+/* =========================
+   CHAT INPUT
+========================= */
+
 .spirit-chat-input{
 
   display:flex;
@@ -1152,6 +1673,9 @@ section{
 
   border-top:
   1px solid rgba(230,210,220,0.5);
+
+  background:
+  rgba(255,255,255,0.4);
 }
 
 .spirit-chat-input input{
@@ -1170,6 +1694,8 @@ section{
 
   border:
   1px solid #ecd4de;
+
+  font-size:14px;
 }
 
 .spirit-chat-input button{
@@ -1187,7 +1713,75 @@ section{
   color:white;
 
   cursor:pointer;
+
+  transition:0.3s ease;
 }
+
+.spirit-chat-input button:hover{
+
+  transform:scale(1.05);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .spirit-chat{
+
+    width:95%;
+
+    right:2.5%;
+
+    height:72vh;
+
+    bottom:105px;
+  }
+
+  .spirit-bot{
+
+    width:72px;
+
+    height:72px;
+
+    right:20px;
+
+    bottom:20px;
+  }
+
+  .bot-notification{
+
+    right:20px;
+
+    bottom:105px;
+
+    width:230px;
+
+    font-size:13px;
+  }
+}
+
+@media(max-width:480px){
+
+  .spirit-chat{
+
+    height:70vh;
+  }
+
+  .suggestions{
+
+    gap:8px;
+  }
+
+  .suggestions button{
+
+    font-size:11px;
+
+    padding:8px 12px;
+  }
+}
+
 
 /* =========================
    SPLASH SCREEN
@@ -1215,6 +1809,10 @@ section{
   align-items:center;
 
   z-index:999999;
+
+  overflow:hidden;
+
+  transition:1.2s ease;
 }
 
 .splash.hidden{
@@ -1224,8 +1822,6 @@ section{
   visibility:hidden;
 
   pointer-events:none;
-
-  transition:1.4s ease;
 }
 
 .splash::before{
@@ -1241,13 +1837,60 @@ section{
   transform:
   translate(-50%,-50%);
 
-  font-size:320px;
+  font-size:340px;
 
   color:
   rgba(255,255,255,0.03);
 
   font-family:
   'Cormorant Garamond',serif;
+}
+
+.splash-glow{
+
+  position:absolute;
+
+  width:500px;
+
+  height:500px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(255,190,220,0.12),
+    transparent 70%
+  );
+
+  filter:blur(40px);
+
+  animation:
+  splashGlow 4s ease-in-out infinite;
+}
+
+@keyframes splashGlow{
+
+  0%{
+
+    transform:scale(1);
+
+    opacity:0.7;
+  }
+
+  50%{
+
+    transform:scale(1.08);
+
+    opacity:1;
+  }
+
+  100%{
+
+    transform:scale(1);
+
+    opacity:0.7;
+  }
 }
 
 .splash-title{
@@ -1257,16 +1900,19 @@ section{
 
   font-size:92px;
 
-  color:#f5d7e3;
+  color:#fff4fa;
 
   z-index:2;
+
+  text-shadow:
+  0 0 25px rgba(255,200,225,0.25);
 }
 
 .splash-sub{
 
   margin-top:18px;
 
-  color:#d495af;
+  color:#f3bfd5;
 
   letter-spacing:10px;
 
@@ -1274,6 +1920,80 @@ section{
 
   z-index:2;
 }
+
+.splash-enter{
+
+  margin-top:80px;
+
+  color:white;
+
+  font-size:15px;
+
+  letter-spacing:5px;
+
+  z-index:2;
+
+  animation:
+  enterPulse 1.8s ease-in-out infinite;
+
+  text-shadow:
+  0 0 18px rgba(255,255,255,0.45);
+}
+
+@keyframes enterPulse{
+
+  0%{
+
+    opacity:0.5;
+
+    transform:translateY(0px);
+  }
+
+  50%{
+
+    opacity:1;
+
+    transform:translateY(-4px);
+  }
+
+  100%{
+
+    opacity:0.5;
+
+    transform:translateY(0px);
+  }
+}
+
+@media(max-width:768px){
+
+  .splash-title{
+
+    font-size:58px;
+
+    text-align:center;
+  }
+
+  .splash-sub{
+
+    letter-spacing:4px;
+
+    text-align:center;
+
+    padding:0 20px;
+  }
+
+  .splash-enter{
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    text-align:center;
+
+    padding:0 20px;
+  }
+}
+
 
 /* =========================
    RESPONSIVE
@@ -1292,7 +2012,59 @@ section{
   }
 }
 
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+  .about-grid,
+  .projects-grid,
+  .certs-grid{
+    grid-template-columns:1fr;
+  }
+
+  .skills-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  #hero{
+    gap:60px;
+  }
+
+  .hero-name{
+    font-size:72px;
+  }
+
+  .section-title{
+    font-size:64px;
+  }
+}
+
 @media(max-width:768px){
+
+  .navbar{
+
+    padding:0 20px;
+
+    height:75px;
+  }
+
+  .nav-links{
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+  }
+
+  .nav-links a{
+
+    font-size:10px;
+
+    letter-spacing:1px;
+  }
 
   #hero{
 
@@ -1300,41 +2072,638 @@ section{
 
     text-align:center;
 
-    padding:
-    160px 30px 100px;
+    padding:140px 20px 80px;
+
+    gap:40px;
+  }
+
+  .hero-left,
+  .hero-right{
+
+    width:100%;
   }
 
   .hero-name{
-    font-size:68px;
+
+    font-size:52px;
+
+    line-height:1;
+  }
+
+  .hero-name-jp{
+
+    font-size:14px;
+
+    letter-spacing:4px;
+  }
+
+  .hero-bio{
+
+    font-size:15px;
+
+    line-height:1.8;
+  }
+
+  .hero-btns{
+
+    justify-content:center;
+  }
+
+  .profile-frame{
+
+    width:100%;
+
+    max-width:320px;
+
+    margin:auto;
+  }
+
+  .profile-img{
+
+    height:420px;
+  }
+
+  .hero-bg-text{
+
+    display:none;
+  }
+
+  section{
+
+    padding:80px 20px;
   }
 
   .section-title{
-    font-size:58px;
+
+    font-size:42px;
+  }
+
+  .about-grid,
+  .stats-grid,
+  .skills-grid,
+  .projects-grid,
+  .certs-grid{
+
+    grid-template-columns:1fr;
   }
 
   .contact-title{
-    font-size:62px;
+
+    font-size:48px;
   }
 
   .contact-mail{
-    font-size:34px;
+
+    font-size:26px;
+
+    word-break:break-word;
   }
 
-  .stats-grid,
-  .skills-grid{
-    grid-template-columns:1fr;
+  .contact-box{
+
+    padding:35px 20px;
+  }
+
+  .contact-links{
+
+    flex-direction:column;
   }
 
   .spirit-chat{
 
-    width:92%;
+    width:95%;
 
-    right:4%;
+    right:2.5%;
 
-    height:72vh;
+    height:70vh;
+  }
+
+  .spirit-bot{
+
+    width:70px;
+
+    height:70px;
   }
 
   .splash-title{
-    font-size:58px;
+
+    font-size:52px;
+
+    text-align:center;
   }
-} 
+
+  .splash-sub{
+
+    letter-spacing:4px;
+
+    text-align:center;
+
+    padding:0 20px;
+  }
+}
+
+@media(max-width:480px){
+
+  .hero-name{
+    font-size:42px;
+  }
+
+  .section-title{
+    font-size:34px;
+  }
+
+  .contact-title{
+    font-size:38px;
+  }
+
+  .btn-primary,
+  .btn-outline{
+
+    width:100%;
+
+    text-align:center;
+  }
+
+  .project-title{
+
+    font-size:28px;
+  }
+
+  .cert-title{
+
+    font-size:28px;
+  }
+}
+
+/* =========================
+   THEME TOGGLE BUTTON
+========================= */
+
+
+.theme-toggle:hover{
+
+  transform:translateY(-2px);
+}
+
+/* =========================
+   DARK THEME
+========================= */
+
+body.dark-theme{
+
+  background:
+  radial-gradient(
+    circle at top,
+    rgba(120,120,180,0.10),
+    transparent 30%
+  ),
+  linear-gradient(
+    to bottom,
+    #09090f,
+    #10131b,
+    #161922
+  );
+
+  color:#f5f7fb;
+}
+
+/* NAVBAR */
+
+body.dark-theme .navbar{
+
+  background:
+  rgba(10,10,16,0.78);
+
+  border-bottom:
+  1px solid rgba(255,255,255,0.08);
+}
+
+body.dark-theme .nav-links a{
+
+  color:#e5e7eb;
+}
+
+body.dark-theme .logo{
+
+  color:#f5f7fb;
+}
+
+/* HERO */
+
+body.dark-theme .hero-bio{
+
+  color:#b8bcc7;
+}
+
+body.dark-theme .hero-bg-text{
+
+  color:
+  rgba(255,255,255,0.04);
+}
+
+/* SECTION TITLES */
+
+body.dark-theme .section-title,
+body.dark-theme .hero-name,
+body.dark-theme .contact-title{
+
+  color:#f5f7fb;
+}
+
+body.dark-theme .section-label,
+body.dark-theme .hero-tag,
+body.dark-theme .hero-name-jp{
+
+  color:#d88aa5;
+}
+
+/* ABOUT */
+
+body.dark-theme .about-text p{
+
+  color:#b8bcc7;
+}
+
+/* =========================
+   JOURNEY SECTION
+========================= */
+
+.journey-section{
+
+  margin-top:90px;
+
+  width:100%;
+
+  max-width:900px;
+
+  margin-left:auto;
+
+  margin-right:auto;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:26px;
+
+  position:relative;
+}
+
+.journey-item{
+
+  display:flex;
+
+  align-items:flex-start;
+
+  gap:24px;
+
+  position:relative;
+}
+
+.journey-dot{
+
+  width:18px;
+
+  height:18px;
+
+  border-radius:50%;
+
+  background:var(--pink);
+
+  margin-top:12px;
+
+  flex-shrink:0;
+
+  box-shadow:
+  0 0 18px rgba(216,138,165,0.35);
+}
+
+.journey-line{
+
+  width:2px;
+
+  height:45px;
+
+  background:
+  rgba(216,138,165,0.28);
+
+  margin-left:8px;
+}
+
+.journey-content{
+
+  flex:1;
+
+  background:
+  rgba(255,255,255,0.58);
+
+  border:
+  1px solid rgba(225,205,215,0.4);
+
+  padding:28px;
+
+  border-radius:22px;
+
+  backdrop-filter:blur(12px);
+
+  transition:0.35s ease;
+}
+
+.journey-content:hover{
+
+  transform:translateY(-4px);
+
+  box-shadow:
+  0 12px 28px rgba(210,150,175,0.12);
+}
+
+.journey-year{
+
+  display:inline-block;
+
+  margin-bottom:12px;
+
+  font-size:12px;
+
+  letter-spacing:3px;
+
+  color:var(--pink);
+}
+
+.journey-content h3{
+
+  font-family:
+  'Cormorant Garamond',serif;
+
+  font-size:42px;
+
+  line-height:1.1;
+
+  margin-bottom:14px;
+
+  color:var(--dark);
+}
+
+.journey-content p{
+
+  line-height:1.9;
+
+  color:var(--text);
+
+  font-size:15px;
+}
+
+/* DARK MODE */
+
+body.dark-theme .journey-content{
+
+  background:
+  rgba(18,20,28,0.78);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+}
+
+body.dark-theme .journey-content h3{
+
+  color:#f5f7fb;
+}
+
+body.dark-theme .journey-content p{
+
+  color:#b8bcc7;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .journey-content{
+
+    padding:22px;
+  }
+
+  .journey-content h3{
+
+    font-size:30px;
+  }
+
+  .journey-content p{
+
+    font-size:14px;
+  }
+}
+
+@media(max-width:480px){
+
+  .journey-item{
+
+    gap:16px;
+  }
+
+  .journey-content h3{
+
+    font-size:24px;
+  }
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .journey-content{
+
+    padding:20px;
+  }
+
+  .journey-content h3{
+
+    font-size:26px;
+  }
+
+  .journey-content p{
+
+    font-size:14px;
+  }
+}
+
+
+/* CARDS */
+
+body.dark-theme .stat-card,
+body.dark-theme .skill-card,
+body.dark-theme .project-card,
+body.dark-theme .cert-card,
+body.dark-theme .contact-box{
+
+  background:
+  rgba(18,20,28,0.78);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.32);
+}
+
+/* TEXT */
+
+body.dark-theme .project-desc,
+body.dark-theme .contact-description,
+body.dark-theme .contact-info,
+body.dark-theme .cert-description{
+
+  color:#b8bcc7;
+}
+
+body.dark-theme .stat-label{
+
+  color:#c4c8d1;
+}
+
+body.dark-theme .project-number{
+
+  color:
+  rgba(255,255,255,0.06);
+}
+
+/* SKILLS */
+
+body.dark-theme .skill-tags span,
+body.dark-theme .project-tags span,
+body.dark-theme .cert-btn,
+body.dark-theme .contact-links a{
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  color:#f5f7fb;
+}
+
+body.dark-theme .skill-tags span:hover,
+body.dark-theme .cert-btn:hover,
+body.dark-theme .contact-links a:hover{
+
+  background:var(--pink);
+
+  color:white;
+}
+
+/* BUTTONS */
+
+body.dark-theme .btn-primary{
+
+  background:#d88aa5;
+
+  color:white;
+}
+
+body.dark-theme .btn-outline{
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  color:#f5f7fb;
+}
+
+body.dark-theme .btn-outline:hover{
+
+  background:
+  rgba(255,255,255,0.08);
+}
+
+/* CONTACT */
+
+body.dark-theme .contact-bg-kanji{
+
+  color:
+  rgba(255,255,255,0.04);
+}
+
+body.dark-theme .contact-mail{
+
+  color:#f5d7e3;
+}
+
+/* SPIRIT BOT */
+
+body.dark-theme .spirit-bot{
+
+  background:
+  radial-gradient(
+    circle at top,
+    rgba(35,35,45,0.96),
+    rgba(18,20,28,0.92)
+  );
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 14px 35px rgba(0,0,0,0.42);
+}
+
+body.dark-theme .spirit-eyes{
+
+  color:#f5f7fb;
+}
+
+/* CHAT */
+
+body.dark-theme .spirit-chat{
+
+  background:
+  rgba(18,20,28,0.92);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+}
+
+body.dark-theme .spirit-chat-header{
+
+  background:#0f1118;
+
+  color:#f5d7e3;
+}
+
+body.dark-theme .msg.bot{
+
+  background:
+  rgba(255,255,255,0.04);
+
+  color:#f5f7fb;
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+}
+
+body.dark-theme .spirit-chat-input{
+
+  border-top:
+  1px solid rgba(255,255,255,0.08);
+}
+
+body.dark-theme .spirit-chat-input input{
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  color:#f5f7fb;
+}
+
+body.dark-theme .spirit-chat-input input::placeholder{
+
+  color:#9ca3af;
+}
+
+/* TOGGLE BUTTON */

@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import tingSound from "../assets/sounds/ting_main.mp3";
 
-import tingMain from "../assets/sounds/ting_main.mp3";
+import { useEffect, useState } from "react";
 
 function SplashScreen() {
 
@@ -8,39 +8,38 @@ function SplashScreen() {
 
   useEffect(() => {
 
-    const audio = new Audio(tingMain);
+    const enterSite = () => {
 
-    const playAudio = () => {
+      /* PLAY SOUND */
 
-      audio.volume = 0.4;
+      const audio = new Audio(tingSound);
+      audio.volume = 0.5;
 
-      audio.play().catch(() => {});
+      audio.play();
+
+      /* HIDE SPLASH */
+
+      setHide(true);
+
+      /* REMOVE EVENT */
 
       window.removeEventListener(
         "click",
-        playAudio
+        enterSite
       );
 
     };
 
     window.addEventListener(
       "click",
-      playAudio
+      enterSite
     );
-
-    const timer = setTimeout(() => {
-
-      setHide(true);
-
-    }, 4000);
 
     return () => {
 
-      clearTimeout(timer);
-
       window.removeEventListener(
         "click",
-        playAudio
+        enterSite
       );
 
     };
@@ -51,27 +50,27 @@ function SplashScreen() {
 
     <div className={`splash ${hide ? "hidden" : ""}`}>
 
-      <div className="splash-title">
-        Gandham Sai Balaji
-      </div>
+      <div className="splash-glow"></div>
 
-      <div className="splash-sub">
-        ガンダム・サイ・バラジ
-      </div>
+      <h1 className="splash-title">
 
-      <div
-        style={{
-          marginTop:"25px",
-          fontSize:"14px",
-          letterSpacing:"4px",
-          opacity:"0.7"
-        }}
-      >
-        CLICK ANYWHERE
+        GANDHAM SAI BALAJI
+
+      </h1>
+
+      <p className="splash-sub">
+
+        AI • CLOUD • FULL STACK
+
+      </p>
+
+      <div className="splash-enter">
+
+        ✦ CLICK ANYWHERE TO ENTER ✦
+
       </div>
 
     </div>
-
   );
 }
 

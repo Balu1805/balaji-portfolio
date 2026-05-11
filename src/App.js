@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import { motion } from "framer-motion";
 
 import Navbar from "./components/Navbar";
@@ -12,23 +14,43 @@ import Contact from "./pages/Contact";
 import SpiritBot from "./components/SpiritBot";
 
 import SplashScreen from "./components/SplashScreen";
-import Petals from "./components/Petals";
 
 import "./styles/main.css";
 
 function App() {
 
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+
+    if(darkMode){
+
+      document.body.classList.add("dark-theme");
+
+    }else{
+
+      document.body.classList.remove("dark-theme");
+
+    }
+
+  }, [darkMode]);
+
   return (
 
     <>
 
-      {/* SPLASH SCREEN */}
-
       <SplashScreen />
 
-      {/* PETALS BACKGROUND */}
+      {/* THEME TOGGLE */}
 
-      <Petals />
+      <button
+        className="theme-toggle"
+        onClick={() => setDarkMode(!darkMode)}
+      >
+
+        {darkMode ? "🌸 Light" : "🌙 Dark"}
+
+      </button>
 
       {/* MAIN WEBSITE */}
 
@@ -62,8 +84,6 @@ function App() {
         <Contact />
 
       </motion.div>
-
-      {/* SPIRIT COMPANION */}
 
       <SpiritBot />
 

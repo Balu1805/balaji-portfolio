@@ -42,7 +42,7 @@ function About() {
 
       <div className="section-line"></div>
 
-      {/* CONTENT */}
+      {/* ABOUT GRID */}
 
       <div className="about-grid">
 
@@ -179,6 +179,114 @@ function About() {
           </div>
 
         </motion.div>
+
+      </div>
+
+      {/* =========================
+          JOURNEY SECTION
+      ========================= */}
+
+      <div className="journey-section">
+
+        {/* ITEM 1 */}
+
+        <div className="journey-item">
+
+          <div className="journey-dot"></div>
+
+          <div className="journey-content">
+
+            <span className="journey-year">
+
+              FOUNDATION
+
+            </span>
+
+            <h3>
+
+              Ravindra Bharathi Public School
+
+            </h3>
+
+            <p>
+
+              Completed 10th standard while building
+              discipline, curiosity and strong academic
+              foundations.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <div className="journey-line"></div>
+
+        {/* ITEM 2 */}
+
+        <div className="journey-item">
+
+          <div className="journey-dot"></div>
+
+          <div className="journey-content">
+
+            <span className="journey-year">
+
+              INTERMEDIATE
+
+            </span>
+
+            <h3>
+
+              Sri Sarada Junior College
+
+            </h3>
+
+            <p>
+
+              Strengthened analytical thinking and
+              developed a deeper passion towards
+              engineering and technology.
+
+            </p>
+
+          </div>
+
+        </div>
+
+        <div className="journey-line"></div>
+
+        {/* ITEM 3 */}
+
+        <div className="journey-item">
+
+          <div className="journey-dot"></div>
+
+          <div className="journey-content">
+
+            <span className="journey-year">
+
+              BACHELOR'S DEGREE
+
+            </span>
+
+            <h3>
+
+              K L University
+
+            </h3>
+
+            <p>
+
+              Pursuing Computer Science Engineering
+              with focus on Artificial Intelligence,
+              Cloud Computing and Full Stack Development.
+
+            </p>
+
+          </div>
+
+        </div>
 
       </div>
 
