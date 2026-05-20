@@ -1,4 +1,4 @@
-import tingSound from "../assets/sounds/ting_main.mp3";
+//import tingSound from "../assets/sounds/ting_main.mp3";
 
 import { useEffect, useState } from "react";
 
@@ -12,10 +12,10 @@ function SplashScreen() {
 
       /* PLAY SOUND */
 
-      const audio = new Audio(tingSound);
-      audio.volume = 0.5;
+      // const audio = new Audio(tingSound);
+      // audio.volume = 0.5;
 
-      audio.play();
+      // audio.play();
 
       /* HIDE SPLASH */
 
