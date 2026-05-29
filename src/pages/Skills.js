@@ -1,22 +1,25 @@
+import skillGroups from "../data/skills";
+
 function Skills() {
   return (
-    <section id="skills" className="section">
-
-      <h2>Skills</h2>
+    <section id="skills">
+      <div className="section-label">技術 ・ SKILLS</div>
+      <h2 className="section-title">What I Work With</h2>
+      <div className="section-line"></div>
 
       <div className="skills-grid">
-
-        <div className="skill-card">Python</div>
-        <div className="skill-card">Java</div>
-        <div className="skill-card">React</div>
-        <div className="skill-card">AWS</div>
-        <div className="skill-card">Machine Learning</div>
-        <div className="skill-card">Neural Networks</div>
-        <div className="skill-card">Spring boot</div>
-        <div className="skill-card">Sql</div>
-
+        {skillGroups.map((group) => (
+          <div className="skill-card" key={group.title}>
+            <span className="skill-kicker">{group.title}</span>
+            <p className="skill-summary">{group.summary}</p>
+            <div className="skill-tags">
+              {group.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-
     </section>
   );
 }

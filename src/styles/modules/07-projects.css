@@ -1,0 +1,87 @@
+﻿/* =========================
+   PROJECTS
+========================= */
+
+.projects-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(2,1fr);
+
+  gap:30px;
+}
+
+.project-card{
+
+  border:
+  1px solid var(--line);
+
+  padding:35px;
+
+  background:var(--glass);
+
+  backdrop-filter:blur(12px);
+
+  transition:0.4s ease;
+}
+
+.project-card:hover{
+
+  transform:
+  translateY(-8px);
+
+  box-shadow:
+  0 14px 35px var(--shadow);
+}
+
+.project-number{
+
+  font-family:
+  'Cormorant Garamond',serif;
+
+  font-size:70px;
+
+  color:#f0dfe6;
+}
+
+.project-title{
+
+  font-family:
+  'Cormorant Garamond',serif;
+
+  font-size:38px;
+
+  margin:20px 0;
+}
+
+.project-desc{
+
+  line-height:2;
+
+  color:var(--text);
+
+  margin-bottom:25px;
+}
+
+.project-tags{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+}
+
+.project-tags span{
+
+  border:
+  1px solid var(--line);
+
+  padding:7px 12px;
+
+  font-size:13px;
+
+  color:var(--pink);
+}
+

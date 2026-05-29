@@ -1,94 +1,55 @@
 import { useEffect, useState } from "react";
-
 import { motion } from "framer-motion";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-
+import Petals from "./components/Petals";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Certifications from "./pages/Certifications";
 import Contact from "./pages/Contact";
-
 import SpiritBot from "./components/SpiritBot";
-
 import SplashScreen from "./components/SplashScreen";
 
 import "./styles/main.css";
 
 function App() {
-
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-
-    if(darkMode){
-
-      document.body.classList.add("dark-theme");
-
-    }else{
-
-      document.body.classList.remove("dark-theme");
-
-    }
-
+    document.body.classList.toggle("dark-theme", darkMode);
   }, [darkMode]);
 
   return (
-
     <>
-
       <SplashScreen />
-
-      {/* THEME TOGGLE */}
+      <Petals />
 
       <button
         className="theme-toggle"
         onClick={() => setDarkMode(!darkMode)}
+        aria-label="Toggle color theme"
       >
-
-        {darkMode ? "🌸 Light" : "🌙 Dark"}
-
+        {darkMode ? "Light" : "Dark"}
       </button>
 
-      {/* MAIN WEBSITE */}
-
       <motion.div
-
-        initial={{
-          opacity:0
-        }}
-
-        animate={{
-          opacity:1
-        }}
-
-        transition={{
-          duration:1.2
-        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2 }}
       >
-
         <Navbar />
-
         <Hero />
-
         <About />
-
         <Skills />
-
         <Projects />
-
         <Certifications />
-
         <Contact />
-
       </motion.div>
 
       <SpiritBot />
-
     </>
-
   );
 }
 

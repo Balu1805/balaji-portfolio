@@ -1,0 +1,83 @@
+﻿/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+  .contact-section{
+
+    padding:90px 20px;
+  }
+
+  .contact-bg-kanji{
+
+    font-size:150px;
+  }
+
+  .contact-description{
+
+    font-size:16px;
+
+    line-height:1.8;
+  }
+
+  .contact-box{
+
+    padding:40px 22px;
+  }
+
+  .contact-mail{
+
+    font-size:32px;
+  }
+
+  .contact-info{
+
+    font-size:15px;
+
+    flex-direction:column;
+
+    gap:6px;
+  }
+
+  .contact-links{
+
+    flex-direction:column;
+
+    width:100%;
+  }
+
+  .contact-links a{
+
+    width:100%;
+  }
+
+  .contact-footer{
+
+    font-size:14px;
+  }
+}
+
+@media(max-width:480px){
+
+  .contact-title{
+
+    font-size:42px;
+  }
+
+  .contact-mail{
+
+    font-size:26px;
+  }
+
+  .contact-description{
+
+    font-size:15px;
+  }
+
+  .contact-box{
+
+    padding:32px 18px;
+  }
+}
+

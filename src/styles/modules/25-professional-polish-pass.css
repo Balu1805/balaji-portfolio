@@ -1,0 +1,400 @@
+﻿/* =========================
+   PROFESSIONAL POLISH PASS
+========================= */
+
+body{
+  cursor:auto;
+}
+
+.petal::before{
+  content:"";
+  display:block;
+  width:13px;
+  height:18px;
+  border-radius:80% 20% 80% 20%;
+  background:
+  linear-gradient(
+    145deg,
+    rgba(255,255,255,0.95),
+    rgba(216,138,165,0.72)
+  );
+  box-shadow:
+  0 4px 12px rgba(216,138,165,0.18);
+}
+
+.theme-toggle{
+  position:fixed;
+  top:104px;
+  right:24px;
+  z-index:1001;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,0.68);
+  color:#3b2d34;
+  backdrop-filter:blur(14px);
+  padding:11px 18px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  cursor:pointer;
+  box-shadow:0 12px 30px rgba(210,150,175,0.10);
+  transition:0.3s ease;
+}
+
+.navbar{
+  height:82px;
+}
+
+.logo{
+  letter-spacing:1px;
+}
+
+.nav-links{
+  gap:30px;
+}
+
+.nav-links a{
+  position:relative;
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  width:0;
+  height:1px;
+  background:var(--pink);
+  transition:0.3s ease;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+.hero-highlights{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:-22px 0 40px;
+}
+
+.hero-highlights span,
+.skill-kicker,
+.project-ai,
+.cert-provider{
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-size:12px;
+  color:var(--pink);
+  font-weight:600;
+}
+
+.hero-highlights span{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,0.46);
+  color:#5a4850;
+  padding:9px 14px;
+  border-radius:999px;
+  backdrop-filter:blur(10px);
+}
+
+.profile-frame,
+.stat-card,
+.skill-card,
+.project-card,
+.contact-box{
+  border-radius:8px;
+}
+
+.profile-deco{
+  top:-16px;
+  right:-14px;
+  font-family:'Inter',sans-serif;
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  background:rgba(255,255,255,0.8);
+  border:1px solid var(--line);
+  padding:9px 12px;
+  border-radius:999px;
+}
+
+.skill-card{
+  min-height:260px;
+  display:flex;
+  flex-direction:column;
+}
+
+.skill-summary{
+  color:var(--text);
+  line-height:1.8;
+  margin:16px 0 28px;
+  font-size:15px;
+}
+
+.skill-card .skill-tags{
+  margin-top:auto;
+}
+
+.project-topline{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:flex-start;
+}
+
+.project-number{
+  font-size:58px;
+  line-height:0.9;
+}
+
+.project-title{
+  line-height:1.1;
+}
+
+.project-impact{
+  margin:-8px 0 24px;
+  padding-left:16px;
+  border-left:2px solid rgba(216,138,165,0.35);
+  color:#7a6570;
+  line-height:1.7;
+  font-size:14px;
+}
+
+.cert-card{
+  border-radius:8px;
+}
+
+.cert-title{
+  margin:0;
+}
+
+.cert-btn{
+  margin-top:auto;
+}
+
+.focus-strip{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:70px;
+}
+
+.focus-strip div{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,0.48);
+  backdrop-filter:blur(12px);
+  padding:24px;
+  border-radius:8px;
+}
+
+.focus-strip span{
+  display:block;
+  color:var(--pink);
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-size:11px;
+  margin-bottom:12px;
+}
+
+.focus-strip strong{
+  display:block;
+  color:#3b2d34;
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;
+  line-height:1.1;
+}
+
+.contact-bg-kanji{
+  font-size:clamp(76px,14vw,190px);
+  letter-spacing:12px;
+}
+
+.contact-links a{
+  text-transform:uppercase;
+}
+
+.bot-notification{
+  cursor:pointer;
+  text-align:left;
+}
+
+.spirit-bot{
+  border:none;
+}
+
+.spirit-face{
+  font-size:15px;
+  letter-spacing:2px;
+  font-weight:700;
+  top:20px;
+}
+
+.spirit-eyes{
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.spirit-chat-header{
+  gap:16px;
+}
+
+.spirit-chat-header div{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.spirit-chat-header span{
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.spirit-chat-header small{
+  color:#d9a9bd;
+  letter-spacing:0;
+  font-size:12px;
+}
+
+.spirit-chat-header button{
+  border:1px solid rgba(255,255,255,0.16);
+  background:rgba(255,255,255,0.06);
+  color:#f5d7e3;
+  border-radius:999px;
+  padding:8px 12px;
+  cursor:pointer;
+}
+
+.spirit-chat-input button{
+  width:auto;
+  min-width:64px;
+  padding:0 16px;
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.splash::before{
+  content:"桜";
+  font-size:180px;
+  letter-spacing:18px;
+}
+
+body.dark-theme .theme-toggle{
+  background:rgba(18,20,28,0.82);
+  color:#f5f7fb;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+body.dark-theme .hero-highlights span,
+body.dark-theme .focus-strip div{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  color:#f5f7fb;
+}
+
+body.dark-theme .skill-summary,
+body.dark-theme .project-impact{
+  color:#b8bcc7;
+}
+
+body.dark-theme .focus-strip strong,
+body.dark-theme .cert-title{
+  color:#f5f7fb;
+}
+
+body.dark-theme .profile-deco{
+  background:rgba(18,20,28,0.92);
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+body.dark-theme .bot-notification{
+  background:rgba(18,20,28,0.92);
+  color:#f5f7fb;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+@media(max-width:1100px){
+  .focus-strip{
+    grid-template-columns:1fr;
+  }
+
+  .nav-links{
+    gap:18px;
+  }
+}
+
+@media(max-width:768px){
+  .navbar{
+    align-items:flex-start;
+    height:auto;
+    min-height:78px;
+    padding:16px 18px;
+    gap:14px;
+  }
+
+  .logo{
+    font-size:28px;
+    line-height:1;
+  }
+
+  .nav-links{
+    max-width:70%;
+    justify-content:flex-end;
+    row-gap:10px;
+  }
+
+  .theme-toggle{
+    top:auto;
+    bottom:24px;
+    left:20px;
+    right:auto;
+    padding:10px 14px;
+  }
+
+  .hero-highlights{
+    justify-content:center;
+  }
+
+  .project-topline{
+    align-items:center;
+  }
+
+  .project-number{
+    font-size:42px;
+  }
+
+  .spirit-chat-header{
+    padding:16px;
+  }
+
+  .spirit-chat-input{
+    gap:8px;
+    padding:14px;
+  }
+}
+
+@media(max-width:480px){
+  .nav-links{
+    max-width:100%;
+    width:100%;
+    justify-content:flex-start;
+  }
+
+  .hero-highlights span{
+    flex:1 1 auto;
+    text-align:center;
+  }
+
+  .focus-strip strong{
+    font-size:24px;
+  }
+
+  .splash::before{
+    font-size:70px;
+    letter-spacing:8px;
+  }
+}
+

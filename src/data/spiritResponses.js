@@ -1,186 +1,82 @@
 const spiritResponses = [
-
-  /* ABOUT */
-
   {
-    keywords:[
-      "about",
-      "yourself",
-      "who are you",
-      "balu",
-      "introduction"
-    ],
-
+    intent: "About",
+    keywords: ["about", "yourself", "who are you", "balu", "introduction", "profile"],
     answer:
-    "🌸 Sai Balaji is an aspiring Software Engineer and AI/ML Developer from Vijayawada with strong interests in Artificial Intelligence, Cloud Computing, Full Stack Development and immersive UI experiences."
+      "Sai Balaji is an aspiring Software Engineer and AI/ML Developer from Vijayawada. His strongest direction is AI-first full stack engineering: useful models, clean APIs, cloud-aware systems, and polished interfaces."
   },
-
-  /* SKILLS */
-
   {
-    keywords:[
-      "skills",
-      "technologies",
-      "tech stack",
-      "programming",
-      "languages"
-    ],
-
+    intent: "Skills",
+    keywords: ["skills", "technologies", "tech stack", "programming", "languages", "tools"],
     answer:
-    "💻 Balu works with Python, Java, React, Flask, Django, Machine Learning, AWS Cloud, AI systems, Full Stack Development, UI/UX design and automation technologies."
+      "Core stack: Python, Java, React, Spring Boot, Flask, Django, SQL, MongoDB, AWS, Azure AI, Linux, Machine Learning, Deep Learning, Computer Vision, and automation with UiPath."
   },
-
-/* PROJECTS */
-
-{
-  keywords:[
-    "projects",
-    "project",
-    "portfolio work",
-    "applications",
-    "work",
-    "builds"
-  ],
-
-  answer:
-  "🚀 Balu has developed multiple projects across AI, Full Stack and Enterprise domains including Flood Prediction using TFT & CNN, Water Quality Detection, Human Activity Recognition, Online Dairy Service, a React + MongoDB Library Management System and an Online Insurance & Loan Platform using Java Enterprise technologies like Servlets, JSP and SQL."
-},
-
-  /* AWS */
-
   {
-    keywords:[
-      "aws",
-      "cloud",
-      "cloud practitioner"
-    ],
-
+    intent: "Projects",
+    keywords: ["projects", "project", "portfolio work", "applications", "work", "builds"],
     answer:
-    "☁️ Balu is AWS Certified Cloud Practitioner with understanding of cloud architecture, AWS services, deployment concepts and cloud fundamentals."
+      "Featured projects include Flood Prediction using CNN + TFT, Water Quality Detection, Human Activity Recognition, Online Dairy Service, Library Management System, and an Online Insurance & Loan Platform."
   },
-
-  /* RED HAT */
-
   {
-    keywords:[
-      "redhat",
-      "linux",
-      "ex183",
-      "openshift"
-    ],
-
+    intent: "AWS",
+    keywords: ["aws", "cloud", "cloud practitioner"],
     answer:
-    "🐧 Balu completed Red Hat EX-183 certification focused on containerization, OpenShift and enterprise Linux technologies."
+      "Sai Balaji is AWS Certified Cloud Practitioner, with foundation in cloud architecture, AWS services, deployment concepts, and cloud fundamentals."
   },
-
-  /* SALESFORCE */
-
   {
-    keywords:[
-      "salesforce",
-      "salesforce ai",
-      "crm"
-    ],
-
+    intent: "Red Hat",
+    keywords: ["redhat", "red hat", "linux", "ex183", "openshift"],
     answer:
-    "⚡ Balu earned Salesforce AI Associate certification demonstrating understanding of AI concepts within enterprise CRM ecosystems."
+      "His Red Hat learning strengthens Linux, containers, OpenShift, and enterprise platform fundamentals."
   },
-
-  /* RPA */
-
   {
-    keywords:[
-      "rpa",
-      "automation",
-      "robotic process automation"
-    ],
-
+    intent: "Salesforce",
+    keywords: ["salesforce", "salesforce ai", "crm"],
     answer:
-    "🤖 Balu completed certifications in Robotic Process Automation and RPA Essentials focused on workflow automation and intelligent business processes."
+      "The Salesforce AI Associate certification supports his understanding of AI concepts inside enterprise CRM ecosystems."
   },
-
-  /* AZURE */
-
   {
-    keywords:[
-      "azure",
-      "ai900",
-      "microsoft"
-    ],
-
+    intent: "Automation",
+    keywords: ["rpa", "automation", "robotic process automation", "uipath"],
     answer:
-    "🧠 Balu completed Microsoft Azure AI-900 certification covering AI workloads, machine learning concepts and Azure AI services."
+      "His RPA certifications focus on workflow automation, process design, and intelligent business productivity."
   },
-
-  /* EDUCATION */
-
   {
-    keywords:[
-      "education",
-      "college",
-      "school",
-      "study"
-    ],
-
+    intent: "Azure",
+    keywords: ["azure", "ai900", "ai-900", "microsoft"],
     answer:
-    "🎓 Balu studied at Ravindra Bharathi Public School, Sri Sarada Junior College and is pursuing Computer Science Engineering at K L University."
+      "Azure AI-900 validates fundamentals across AI workloads, machine learning concepts, and Azure AI services."
   },
-
-  /* AI */
-
   {
-    keywords:[
-      "ai",
-      "machine learning",
-      "deep learning",
-      "ml"
-    ],
-
+    intent: "Education",
+    keywords: ["education", "college", "school", "study", "university"],
     answer:
-    "🧠 Artificial Intelligence and Machine Learning are Balu's strongest areas of interest, especially real-world AI systems and intelligent prediction platforms."
+      "Education path: Ravindra Bharathi Public School, Sri Sarada Junior College, and Computer Science Engineering at K L University."
   },
-
-  /* CONTACT */
-
   {
-    keywords:[
-      "contact",
-      "linkedin",
-      "github",
-      "email"
-    ],
-
+    intent: "AI",
+    keywords: ["ai", "machine learning", "deep learning", "ml", "model"],
     answer:
-    "📩 You can connect with Balu through LinkedIn, GitHub or email from the Contact section of the portfolio."
+      "AI/ML is his main technical interest, especially prediction platforms, computer vision, model-backed products, and real-world decision support systems."
   },
-
-  /* GOALS */
-
   {
-    keywords:[
-      "goal",
-      "career",
-      "future",
-      "dream"
-    ],
-
+    intent: "Contact",
+    keywords: ["contact", "linkedin", "github", "email", "hire", "resume"],
     answer:
-    "🚀 Balu aims to become a strong Software Engineer focused on AI systems, cloud technologies and impactful scalable applications."
+      "You can contact him through the Contact section, email him at saibalajigandham877@gmail.com, open his GitHub, or download the resume from the page."
   },
-
-  /* DEFAULT */
-
   {
-    keywords:[
-      "hello",
-      "hi",
-      "hey"
-    ],
-
+    intent: "Goals",
+    keywords: ["goal", "career", "future", "dream", "role"],
     answer:
-    "🌸 Welcome wanderer... Feel free to ask about projects, certifications, skills or career journey."
+      "His goal is to grow into a strong software engineer building scalable AI systems, cloud-ready applications, and interfaces that feel genuinely useful."
+  },
+  {
+    intent: "Greeting",
+    keywords: ["hello", "hi", "hey", "namaste"],
+    answer:
+      "Hello. Ask me about Sai Balaji's projects, skills, certifications, education, AI work, or how to contact him."
   }
-
 ];
 
 export default spiritResponses;

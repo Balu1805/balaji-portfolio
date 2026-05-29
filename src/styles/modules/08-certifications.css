@@ -1,0 +1,164 @@
+﻿/* =========================
+   CERTIFICATIONS
+========================= */
+
+.certs-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(320px,1fr));
+
+  gap:32px;
+
+  margin-top:70px;
+}
+
+.cert-card{
+
+  background:
+  rgba(255,255,255,0.5);
+
+  border:1px solid var(--line);
+
+  border-radius:18px;
+
+  overflow:hidden;
+
+  transition:0.4s ease;
+
+  backdrop-filter:blur(14px);
+
+  box-shadow:
+  0 8px 24px rgba(210,150,175,0.08);
+
+  display:flex;
+
+  flex-direction:column;
+
+  height:100%;
+}
+
+.cert-card:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:
+  0 18px 40px rgba(210,150,175,0.18);
+}
+
+.cert-img-wrap{
+
+  width:100%;
+
+  height:220px;
+
+  overflow:hidden;
+
+  background:#f8f1f5;
+}
+
+.cert-img-wrap img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+
+  transition:0.4s ease;
+}
+
+.cert-card:hover .cert-img-wrap img{
+
+  transform:scale(1.04);
+}
+
+.cert-body{
+
+  padding:28px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:16px;
+
+  flex:1;
+}
+
+.cert-title{
+
+  font-family:
+  'Cormorant Garamond',serif;
+
+  font-size:34px;
+
+  line-height:1.1;
+
+  color:#24161d;
+}
+
+.cert-provider{
+
+  font-size:14px;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  color:var(--pink);
+
+  font-weight:500;
+}
+
+.cert-description{
+
+  font-size:15px;
+
+  line-height:1.8;
+
+  color:var(--text);
+
+  flex:1;
+}
+
+.cert-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  width:fit-content;
+
+  padding:12px 22px;
+
+  border:1px solid var(--line);
+
+  background:
+  rgba(255,255,255,0.6);
+
+  text-decoration:none;
+
+  color:#4d3b44;
+
+  font-size:12px;
+
+  letter-spacing:2px;
+
+  border-radius:8px;
+
+  transition:0.35s ease;
+}
+
+.cert-btn:hover{
+
+  background:var(--pink);
+
+  color:white;
+
+  transform:translateY(-2px);
+}
+

@@ -1,0 +1,47 @@
+﻿/* =========================
+   SECTIONS
+========================= */
+
+section{
+
+  padding:120px 80px;
+
+  position:relative;
+
+  z-index:2;
+}
+
+.section-label{
+
+  color:var(--pink);
+
+  letter-spacing:5px;
+
+  font-size:14px;
+
+  margin-bottom:20px;
+}
+
+.section-title{
+
+  font-family:
+  'Cormorant Garamond',serif;
+
+  font-size:82px;
+
+  font-weight:700;
+
+  margin-bottom:20px;
+}
+
+.section-line{
+
+  width:50px;
+
+  height:1px;
+
+  background:var(--pink);
+
+  margin-bottom:60px;
+}
+

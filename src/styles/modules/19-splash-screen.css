@@ -1,0 +1,211 @@
+﻿/* =========================
+   SPLASH SCREEN
+========================= */
+
+.splash{
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at center,
+    #24131d 0%,
+    #140911 100%
+  );
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  z-index:999999;
+
+  overflow:hidden;
+
+  transition:1.2s ease;
+}
+
+.splash.hidden{
+
+  opacity:0;
+
+  visibility:hidden;
+
+  pointer-events:none;
+}
+
+.splash::before{
+
+  content:"桜";
+
+  position:absolute;
+
+  top:50%;
+
+  left:50%;
+
+  transform:
+  translate(-50%,-50%);
+
+  font-size:340px;
+
+  color:
+  rgba(255,255,255,0.03);
+
+  font-family:
+  'Cormorant Garamond',serif;
+}
+
+.splash-glow{
+
+  position:absolute;
+
+  width:500px;
+
+  height:500px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(255,190,220,0.12),
+    transparent 70%
+  );
+
+  filter:blur(40px);
+
+  animation:
+  splashGlow 4s ease-in-out infinite;
+}
+
+@keyframes splashGlow{
+
+  0%{
+
+    transform:scale(1);
+
+    opacity:0.7;
+  }
+
+  50%{
+
+    transform:scale(1.08);
+
+    opacity:1;
+  }
+
+  100%{
+
+    transform:scale(1);
+
+    opacity:0.7;
+  }
+}
+
+.splash-title{
+
+  font-family:
+  'Cormorant Garamond',serif;
+
+  font-size:92px;
+
+  color:#fff4fa;
+
+  z-index:2;
+
+  text-shadow:
+  0 0 25px rgba(255,200,225,0.25);
+}
+
+.splash-sub{
+
+  margin-top:18px;
+
+  color:#f3bfd5;
+
+  letter-spacing:10px;
+
+  font-size:16px;
+
+  z-index:2;
+}
+
+.splash-enter{
+
+  margin-top:80px;
+
+  color:white;
+
+  font-size:15px;
+
+  letter-spacing:5px;
+
+  z-index:2;
+
+  animation:
+  enterPulse 1.8s ease-in-out infinite;
+
+  text-shadow:
+  0 0 18px rgba(255,255,255,0.45);
+}
+
+@keyframes enterPulse{
+
+  0%{
+
+    opacity:0.5;
+
+    transform:translateY(0px);
+  }
+
+  50%{
+
+    opacity:1;
+
+    transform:translateY(-4px);
+  }
+
+  100%{
+
+    opacity:0.5;
+
+    transform:translateY(0px);
+  }
+}
+
+@media(max-width:768px){
+
+  .splash-title{
+
+    font-size:58px;
+
+    text-align:center;
+  }
+
+  .splash-sub{
+
+    letter-spacing:4px;
+
+    text-align:center;
+
+    padding:0 20px;
+  }
+
+  .splash-enter{
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    text-align:center;
+
+    padding:0 20px;
+  }
+}
+

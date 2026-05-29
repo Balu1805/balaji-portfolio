@@ -1,0 +1,384 @@
+﻿/* =========================
+   JOURNEY SECTION
+========================= */
+
+.journey-section{
+
+  margin-top:90px;
+
+  width:100%;
+
+  max-width:900px;
+
+  margin-left:auto;
+
+  margin-right:auto;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:26px;
+
+  position:relative;
+}
+
+.journey-item{
+
+  display:flex;
+
+  align-items:flex-start;
+
+  gap:24px;
+
+  position:relative;
+}
+
+.journey-dot{
+
+  width:18px;
+
+  height:18px;
+
+  border-radius:50%;
+
+  background:var(--pink);
+
+  margin-top:12px;
+
+  flex-shrink:0;
+
+  box-shadow:
+  0 0 18px rgba(216,138,165,0.35);
+}
+
+.journey-line{
+
+  width:2px;
+
+  height:45px;
+
+  background:
+  rgba(216,138,165,0.28);
+
+  margin-left:8px;
+}
+
+.journey-content{
+
+  flex:1;
+
+  background:
+  rgba(255,255,255,0.58);
+
+  border:
+  1px solid rgba(225,205,215,0.4);
+
+  padding:28px;
+
+  border-radius:22px;
+
+  backdrop-filter:blur(12px);
+
+  transition:0.35s ease;
+}
+
+.journey-content:hover{
+
+  transform:translateY(-4px);
+
+  box-shadow:
+  0 12px 28px rgba(210,150,175,0.12);
+}
+
+.journey-year{
+
+  display:inline-block;
+
+  margin-bottom:12px;
+
+  font-size:12px;
+
+  letter-spacing:3px;
+
+  color:var(--pink);
+}
+
+.journey-content h3{
+
+  font-family:
+  'Cormorant Garamond',serif;
+
+  font-size:42px;
+
+  line-height:1.1;
+
+  margin-bottom:14px;
+
+  color:var(--dark);
+}
+
+.journey-content p{
+
+  line-height:1.9;
+
+  color:var(--text);
+
+  font-size:15px;
+}
+
+/* DARK MODE */
+
+body.dark-theme .journey-content{
+
+  background:
+  rgba(18,20,28,0.78);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+}
+
+body.dark-theme .journey-content h3{
+
+  color:#f5f7fb;
+}
+
+body.dark-theme .journey-content p{
+
+  color:#b8bcc7;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .journey-content{
+
+    padding:22px;
+  }
+
+  .journey-content h3{
+
+    font-size:30px;
+  }
+
+  .journey-content p{
+
+    font-size:14px;
+  }
+}
+
+@media(max-width:480px){
+
+  .journey-item{
+
+    gap:16px;
+  }
+
+  .journey-content h3{
+
+    font-size:24px;
+  }
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .journey-content{
+
+    padding:20px;
+  }
+
+  .journey-content h3{
+
+    font-size:26px;
+  }
+
+  .journey-content p{
+
+    font-size:14px;
+  }
+}
+
+
+/* CARDS */
+
+body.dark-theme .stat-card,
+body.dark-theme .skill-card,
+body.dark-theme .project-card,
+body.dark-theme .cert-card,
+body.dark-theme .contact-box{
+
+  background:
+  rgba(18,20,28,0.78);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.32);
+}
+
+/* TEXT */
+
+body.dark-theme .project-desc,
+body.dark-theme .contact-description,
+body.dark-theme .contact-info,
+body.dark-theme .cert-description{
+
+  color:#b8bcc7;
+}
+
+body.dark-theme .stat-label{
+
+  color:#c4c8d1;
+}
+
+body.dark-theme .project-number{
+
+  color:
+  rgba(255,255,255,0.06);
+}
+
+/* SKILLS */
+
+body.dark-theme .skill-tags span,
+body.dark-theme .project-tags span,
+body.dark-theme .cert-btn,
+body.dark-theme .contact-links a{
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  color:#f5f7fb;
+}
+
+body.dark-theme .skill-tags span:hover,
+body.dark-theme .cert-btn:hover,
+body.dark-theme .contact-links a:hover{
+
+  background:var(--pink);
+
+  color:white;
+}
+
+/* BUTTONS */
+
+body.dark-theme .btn-primary{
+
+  background:#d88aa5;
+
+  color:white;
+}
+
+body.dark-theme .btn-outline{
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  color:#f5f7fb;
+}
+
+body.dark-theme .btn-outline:hover{
+
+  background:
+  rgba(255,255,255,0.08);
+}
+
+/* CONTACT */
+
+body.dark-theme .contact-bg-kanji{
+
+  color:
+  rgba(255,255,255,0.04);
+}
+
+body.dark-theme .contact-mail{
+
+  color:#f5d7e3;
+}
+
+/* SPIRIT BOT */
+
+body.dark-theme .spirit-bot{
+
+  background:
+  radial-gradient(
+    circle at top,
+    rgba(35,35,45,0.96),
+    rgba(18,20,28,0.92)
+  );
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 14px 35px rgba(0,0,0,0.42);
+}
+
+body.dark-theme .spirit-eyes{
+
+  color:#f5f7fb;
+}
+
+/* CHAT */
+
+body.dark-theme .spirit-chat{
+
+  background:
+  rgba(18,20,28,0.92);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+}
+
+body.dark-theme .spirit-chat-header{
+
+  background:#0f1118;
+
+  color:#f5d7e3;
+}
+
+body.dark-theme .msg.bot{
+
+  background:
+  rgba(255,255,255,0.04);
+
+  color:#f5f7fb;
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+}
+
+body.dark-theme .spirit-chat-input{
+
+  border-top:
+  1px solid rgba(255,255,255,0.08);
+}
+
+body.dark-theme .spirit-chat-input input{
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  color:#f5f7fb;
+}
+
+body.dark-theme .spirit-chat-input input::placeholder{
+
+  color:#9ca3af;
+}
+
+/* TOGGLE BUTTON */
+

@@ -1,0 +1,52 @@
+﻿/* =========================
+   CERTIFICATIONS MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  .certs-grid{
+
+    grid-template-columns:1fr;
+
+    gap:24px;
+  }
+
+  .cert-img-wrap{
+
+    height:200px;
+  }
+
+  .cert-body{
+
+    padding:22px;
+  }
+
+  .cert-title{
+
+    font-size:28px;
+  }
+
+  .cert-description{
+
+    font-size:14px;
+  }
+
+  .cert-btn{
+
+    width:100%;
+  }
+}
+
+@media(max-width:480px){
+
+  .cert-title{
+
+    font-size:24px;
+  }
+
+  .cert-img-wrap{
+
+    height:180px;
+  }
+}
+

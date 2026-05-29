@@ -1,0 +1,17 @@
+﻿/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+  .about-grid,
+  .projects-grid,
+  .certs-grid{
+    grid-template-columns:1fr;
+  }
+
+  .skills-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+

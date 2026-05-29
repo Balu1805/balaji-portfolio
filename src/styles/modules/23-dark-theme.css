@@ -1,0 +1,79 @@
+﻿/* =========================
+   DARK THEME
+========================= */
+
+body.dark-theme{
+
+  background:
+  radial-gradient(
+    circle at top,
+    rgba(120,120,180,0.10),
+    transparent 30%
+  ),
+  linear-gradient(
+    to bottom,
+    #09090f,
+    #10131b,
+    #161922
+  );
+
+  color:#f5f7fb;
+}
+
+/* NAVBAR */
+
+body.dark-theme .navbar{
+
+  background:
+  rgba(10,10,16,0.78);
+
+  border-bottom:
+  1px solid rgba(255,255,255,0.08);
+}
+
+body.dark-theme .nav-links a{
+
+  color:#e5e7eb;
+}
+
+body.dark-theme .logo{
+
+  color:#f5f7fb;
+}
+
+/* HERO */
+
+body.dark-theme .hero-bio{
+
+  color:#b8bcc7;
+}
+
+body.dark-theme .hero-bg-text{
+
+  color:
+  rgba(255,255,255,0.04);
+}
+
+/* SECTION TITLES */
+
+body.dark-theme .section-title,
+body.dark-theme .hero-name,
+body.dark-theme .contact-title{
+
+  color:#f5f7fb;
+}
+
+body.dark-theme .section-label,
+body.dark-theme .hero-tag,
+body.dark-theme .hero-name-jp{
+
+  color:#d88aa5;
+}
+
+/* ABOUT */
+
+body.dark-theme .about-text p{
+
+  color:#b8bcc7;
+}
+

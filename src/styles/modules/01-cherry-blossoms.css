@@ -1,0 +1,55 @@
+﻿/* =========================
+   CHERRY BLOSSOMS
+========================= */
+
+.petal{
+
+  position:fixed;
+
+  top:-10vh;
+
+  z-index:1;
+
+  pointer-events:none;
+
+  animation:
+  petalFall linear infinite;
+
+  opacity:0.7;
+}
+
+.petal::before{
+
+  content:"桜";
+
+  font-size:18px;
+}
+
+@keyframes petalFall{
+
+  0%{
+
+    transform:
+    translateY(-10vh)
+    translateX(0px)
+    rotate(0deg);
+
+    opacity:0;
+  }
+
+  10%{
+
+    opacity:0.8;
+  }
+
+  100%{
+
+    transform:
+    translateY(110vh)
+    translateX(120px)
+    rotate(360deg);
+
+    opacity:0;
+  }
+}
+
